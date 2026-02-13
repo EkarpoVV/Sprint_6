@@ -1,0 +1,6 @@
+**/__pycache__/
+.coverage
+allure_results/
+.vscode/
+.venv/
+.pytest_cache
