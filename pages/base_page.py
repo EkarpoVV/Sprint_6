@@ -13,7 +13,7 @@ class BasePage:
         return self.driver.find_element(*locator)
     
     @allure.step("Подождать и кликнуть на элемент")
-    def wait_and_click(self, locator):
+    def wait_and_click(self, locator):  
         element = self.wait_and_find_element(locator)
         element.click()
 
@@ -42,3 +42,7 @@ class BasePage:
         WebDriverWait(self.driver, timeout).until(
         lambda d: d.execute_script("return document.readyState") == "complete"
         )
+
+    @allure.step("Получить URL страницы")
+    def get_current_url(self):
+        return self.driver.current_url
